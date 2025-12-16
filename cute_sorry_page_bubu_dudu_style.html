@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorry Baccha 💗</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffd6e7, #fff0f6);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .card {
+      background: #ffffff;
+      width: min(94%, 420px);
+      padding: 22px 20px 26px;
+      border-radius: 26px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .img-wrap img{
+      width: 100%;
+      max-height: 260px;
+      object-fit: contain;
+      border-radius: 18px;
+    }
+    h1 {
+      margin: 12px 0 6px;
+      font-size: 26px;
+      color: #ff4f9a;
+    }
+    p {
+      margin: 8px 0;
+      color: #444;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .btns {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      position: relative;
+    }
+    button {
+      border: none;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all .15s ease;
+    }
+    .ok {
+      background: #ff4f9a;
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(255,79,154,.35);
+    }
+    .no {
+      background: #fff0f6;
+      color: #ff4f9a;
+      position: relative;
+    }
+    .page { display: none; }
+    .page.active { display: block; }
+  </style>
+</head>
+<body>
+  <!-- PAGE 1 -->
+  <div class="card page active" id="page1">
+    <div class="img-wrap">
+      <!-- First cute image -->
+      <img src="bubu-dudu-1.png" alt="Bubu Dudu Sorry" />
+    </div>
+    <h1>Sorryy Baccha</h1>
+    <p>
+      Aap meri cutiee ho 🥺💗<br />
+      Please maan jao
+    </p>
+
+    <div class="btns">
+      <button class="ok" onclick="goNext()">Jii maan gyi 💖</button>
+      <button class="no" id="noBtn">Nhi 😒</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="card page" id="page2">
+    <div class="img-wrap">
+      <!-- Second cute image -->
+      <img src="bubu-dudu-2.png" alt="Bubu Dudu Hug" />
+    </div>
+    <h1>Lovee youu soo much cutiee</h1>
+    <p>
+      Pta tha maan jaogi 😌💗<br />
+      Muaahhh 💋
+    </p>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * 220 - 110;
+      const y = Math.random() * 140 - 70;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    function goNext() {
+      document.getElementById('page1').classList.remove('active');
+      document.getElementById('page2').classList.add('active');
+    }
+  </script>
+</body>
+</html>
